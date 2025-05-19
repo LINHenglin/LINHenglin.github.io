@@ -1,14 +1,24 @@
 ---
 layout: default
 ---
+{% if page.image %}
+<div class="post-header" style="position: relative; margin-bottom: 2em;">
+  <img src="{{ page.image }}" alt="Post Background" style="width: 100%; max-height: 400px; object-fit: cover;">
+  <h1 style="position: absolute; bottom: 20px; left: 20px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">{{
+    page.title }}</h1>
+</div>
+{% else %}
 <h1>{{ page.title }}</h1>
+{% endif %}
 
-<p>
-  {{ page.date | date_to_string }}
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
+<div class="post-content">
+  <div class="post-meta">
+    {{ page.date | date_to_string }}
+    {% assign author = site.authors | where: 'short_name', page.author | first %}
+    {% if author %}
     - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-</p>
+    {% endif %}
+  </div>
 
-{{ content }}
+  {{ content }}
+</div>
