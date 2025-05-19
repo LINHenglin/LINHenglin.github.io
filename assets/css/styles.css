@@ -12,30 +12,31 @@ body {
 /* Hero 部分样式 */
 .hero-section {
   position: relative;
-  margin-bottom: 2rem;
-  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .hero-image {
   width: 100%;
-  max-height: 300px;
-  /* 减小图片高度 */
+  max-height: 250px;
+  /* 进一步减小高度 */
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hero-section h1 {
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
+  /* 改为左对齐 */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
+  transform: none;
+  /* 移除居中变换 */
+  background: none;
+  /* 移除背景 */
+  padding: 0;
 }
 
 /* 导航栏样式 */
